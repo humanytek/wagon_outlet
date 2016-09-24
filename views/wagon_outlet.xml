@@ -185,15 +185,19 @@
             <field name="arch" type="xml">
                 <field name="weight_1" position="attributes">
                     <attribute name="readonly">0</attribute>
+                    <attribute name="states">load</attribute>
                 </field>
                 <field name="weight_2" position="attributes">
                     <attribute name="readonly">0</attribute>
+                    <attribute name="states">load</attribute>
                 </field>
                 <field name="weight_3" position="attributes">
                     <attribute name="readonly">0</attribute>
+                    <attribute name="states">load</attribute>
                 </field>
                 <field name="weight_4" position="attributes">
                     <attribute name="readonly">0</attribute>
+                    <attribute name="states">load</attribute>
                 </field>
             </field>
         </record>
