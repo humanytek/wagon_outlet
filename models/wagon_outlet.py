@@ -15,6 +15,15 @@ class WagonOutlet(models.Model):
     _defaults = {'name': lambda obj, cr, uid, context: obj.pool.get('ir.sequence').get(cr, uid, 'reg_code_wo'), }
 
     @api.one
+    @api.depends('contract_id')
+    def _compute_product_id(self):
+        product_id = False
+        for line in self.contract_id.order_line:
+            product_id = line.product_id.id
+            break
+        self.product_id = product_id
+
+    @api.one
     @api.depends('contract_id', 'clean_kilos')
     def _compute_delivered(self):
         self.delivered = sum(record.clean_kilos for record in self.contract_id.wagon_outlet_ids) / 1000
