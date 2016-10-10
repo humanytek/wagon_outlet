@@ -159,7 +159,7 @@
                 <tree string="Wagon Outlet Tree">
                     <field name="name"/>
                     <field name="contract_id"/>
-                    <field name="product_id"/>
+                    <field name="wagon"/>
                     <field name="state"/>
                 </tree>
             </field>
