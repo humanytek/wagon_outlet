@@ -4,7 +4,7 @@
         <record id="seq_type_wagon_outlet" model="ir.sequence.type">
           <field name="name">WO REG</field>
           <field name="code">reg_code_wo</field>
-        </record>
+        </record>:q
         <record id="seq_wagon_outlet" model="ir.sequence">
             <field name="name">reg</field>
             <field name="code">reg_code_wo</field>
@@ -40,6 +40,7 @@
                                 <group col="3">
                                     <field name="contract_id" required="1" attrs="{'readonly':[('state', 'not in', ['capture'])]}"/>
                                     <field name="contract_type" nolabel="1" class="oe_inline"/>
+				    <field name="active" string="Activo" groups="__export__.res_groups_96"/>
                                 </group>
                                 <group>
                                     <field name="partner_id"/>
@@ -49,6 +50,7 @@
                             <group col="1">
                                 <group>
                                     <field name="wagon" required="1" attrs="{'readonly':[('state', 'not in', ['capture'])]}"/>
+                                    <field name="order_num"/>
                                 </group>
                                 <group col="3">
                                     <field name="zvp_id" required="1" attrs="{'readonly':[('state', 'not in', ['capture'])]}"/>
@@ -97,7 +99,7 @@
                                 </group>
                                 <group>
                                     <field name="seal_up_from" attrs="{'readonly':[('state', 'not in', ['analysis'])], 'required':[('state', 'in', ['analysis'])]}"/>
-                                    <field name="seal_up_to" string="to" attrs="{'readonly':[('state', 'not in', ['analysis'])], 'required':[('state', 'in', ['analysis'])]}"/>
+                                    <field name="seal_up_to" string="to" attrs="{'readonly':[('state', 'not in', ['analysis'])]}"/>
                                 </group>
                             </group>
                         </group>

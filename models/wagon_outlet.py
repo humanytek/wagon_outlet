@@ -24,9 +24,9 @@ class WagonOutlet(models.Model):
         self.product_id = product_id
 
     @api.one
-    @api.depends('contract_id', 'clean_kilos')
+    @api.depends('contract_id', 'raw_kilos')
     def _compute_delivered(self):
-        self.delivered = sum(record.clean_kilos for record in self.contract_id.wagon_outlet_ids) / 1000
+        self.delivered = sum(record.raw_kilos for record in self.contract_id.wagon_outlet_ids) / 1000
 
     @api.one
     def fun_load(self):
