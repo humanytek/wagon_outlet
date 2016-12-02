@@ -21,6 +21,7 @@
                     <header>
                         <button name="fun_load" type="object" string="Load" states="load" class="oe_highlight"/>
                         <button name="fun_transfer" type="object" string="Transfer" class="oe_highlight"
+			    groups="truck_reception.group_truck_transfer"
                             attrs="{'invisible': ['|',
                                                         ('contract_state', 'in', ['except_picking']),
                                                         '|',
@@ -161,7 +162,9 @@
                 <tree string="Wagon Outlet Tree">
                     <field name="name"/>
                     <field name="contract_id"/>
+		    <field name="order_num"/>
                     <field name="wagon"/>
+		    <field name="raw_kilos" sum="raw kilos"/>
                     <field name="state"/>
                 </tree>
             </field>
